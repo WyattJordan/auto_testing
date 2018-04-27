@@ -1,0 +1,4 @@
+language: cpp
+compilier: gcc
+script: make && make test
+# Can Add notifications section as desired
