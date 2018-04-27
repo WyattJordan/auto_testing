@@ -8,6 +8,10 @@
 # The "balanced.o" after the "test:" is a dependency:
 # make will run the balanced.o target (if out of date)
 # before running the commands for test
+#make a variable named CXXFLAGS, use $(CXXFLAGS) to read it
+CXXFLAGS=-std=c++11 -g -fprofile-arcs -ftest -coverage -g
+balanced.o:
+	g++ $(CXXFLAGS) -c balanced.cpp -o balanced.o
 test: balanced.o
-	g++ -std=c++11 -g *.o balancedTest.cpp -o balancedTest
+	g++ $(CXXFLAGS) *.o balancedTest.cpp -o balancedTest
 	./balancedTest
