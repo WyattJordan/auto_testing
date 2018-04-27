@@ -3,8 +3,7 @@ compilier: gcc
 script: make && make test
 # Can Add notifications section as desired
 before_install:
-    -pip install --user cpp-coveralls
+    - pip install --user cpp-coveralls
 
 after_success:
     - coveralls --include "balanced.cpp" --gcov-options '\-lp'
-  
